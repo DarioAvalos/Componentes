@@ -19,7 +19,7 @@
 <ion-content>
 
   <ion-list>
-    <ion-item *ngFor="let c of componentes" 
+    <ion-item *ngFor="let c of componentes | async" 
         [routerLink]="c.redirecTo"
         detail>
       <ion-icon [name]="c.icon" slot="start" color="primary"></ion-icon>
