@@ -70,4 +70,8 @@ export const routes: Routes = [
     path: 'loading',
     loadComponent: () => import('./pages/loading/loading.page').then( m => m.LoadingPage)
   },
+  {
+    path: 'modal',
+    loadComponent: () => import('./pages/modal/modal.page').then( m => m.ModalPage)
+  }
 ];
