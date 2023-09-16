@@ -97,5 +97,32 @@ export const routes: Routes = [
   {
     path: 'slides',
     loadComponent: () => import('./pages/slides/slides.page').then( m => m.SlidesPage)
+  },
+  {
+    path: 'tabs',
+    loadComponent: () => import('./pages/tabs/tabs.page').then( m => m.TabsPage),
+    children: [
+      {
+        path: '',
+        redirectTo: '/tabs/account',
+        pathMatch: 'full'
+      },
+      {
+        path: 'account',
+        loadComponent: () => import('./pages/avatar/avatar.page').then( m => m.AvatarPage)
+      },
+      {
+        path: 'contacts',
+        loadComponent: () => import('./pages/list/list.page').then( m => m.ListPage)
+      },
+      {
+        path: 'settings',
+        loadComponent: () => import('./pages/infinite/infinite.page').then( m => m.InfinitePage)
+      }
+    ] 
+  },
+  {
+    path: 'toast',
+    loadComponent: () => import('./pages/toast/toast.page').then( m => m.ToastPage)
   }
 ];
